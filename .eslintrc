@@ -3,10 +3,12 @@
   "env": {
     "node": true
   },
+  "rules": {
+    "@typescript-eslint/no-var-requires": 0
+  },
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier",
-    "plugin:react-hooks/recommended"
+    "prettier"
   ]
 }
