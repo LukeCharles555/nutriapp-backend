@@ -38,4 +38,4 @@ npm start will start the API with node so it will just act as a static server, p
 
 There is only one bit of configuration you need to set up with this project, and that is to hook it up to a mongo database, I use Mongo DB Atlas.
 
-An example config file of how to set this up can be found [here](./src/config/keys.ts.example)
+An example config file of how to set this up can be found [here](./src/config/keys.js.example)
