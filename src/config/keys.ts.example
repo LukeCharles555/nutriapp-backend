@@ -1,0 +1,8 @@
+// Create a keys.js file and copy the below into that file
+// Change <yourMongoURI> for your mongo db locaton and credentials
+// I am using Atlas MongoDB for mine
+module.exports = {
+  mongoURI:
+    "mongodb://<yourMongoURI>",
+  secretOrKey: "secret",
+};
