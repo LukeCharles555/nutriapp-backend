@@ -21,12 +21,24 @@ const createRecipe = (request) => {
   return recipe;
 };
 
+/**
+ * @desc - Gets recipes
+ *
+ * @returns Recipes
+ */
 const getRecipes = () => {
   const recipes = Recipe.find();
 
   return recipes;
 };
 
+/**
+ * @desc - Gets a recipe by an id
+ *
+ * @param { { params: {id: string} } } request - Request coming into the function
+ *
+ * @returns A single recipe
+ */
 const getRecipeById = (request) => {
   const { id } = request.params;
   const recipe = Recipe.findById(id);
@@ -34,6 +46,15 @@ const getRecipeById = (request) => {
   return recipe;
 };
 
+/**
+ * @desc - Update a recipe
+ *
+ * @param request - Request to update recipe
+ *
+ * @returns recipe to update
+ *
+ * @throws {RecipeNotFoundError}
+ */
 const updateRecipe = async (request) => {
   const _id = request.params.id;
   const { title, description, ingredients, method } = request.body;
@@ -52,6 +73,15 @@ const updateRecipe = async (request) => {
   }
 };
 
+/**
+ * @desc - deletes a recipe
+ *
+ * @param {{params: {id: string}}} request
+ *
+ * @returns deleted Recipe
+ *
+ * @throws {RecipeNotFoundError}
+ */
 const deleteRecipe = async (request) => {
   const _id = request.params.id;
 

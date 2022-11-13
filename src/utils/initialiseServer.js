@@ -1,6 +1,10 @@
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
+// Consts
+const { RECIPES } = require('../consts/Routes');
+
+// Routes
 const recipeRouter = require('../routes/recipes/recipeRouter');
 
 const initialiseServer = (app) => {
@@ -9,7 +13,7 @@ const initialiseServer = (app) => {
 
   app.use(cors());
 
-  app.use('/recipes', recipeRouter(app));
+  app.use(RECIPES, recipeRouter(app));
 
   return app;
 };

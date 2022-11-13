@@ -16,6 +16,9 @@ const recipeRouter = (app) => {
     response.send('This is an API health check');
   });
 
+  /**
+   * Route to get all recipes
+   */
   router.get('/getRecipes', (request, response, next) => {
     return getRecipes()
       .then((recipes) => {
@@ -29,6 +32,9 @@ const recipeRouter = (app) => {
       });
   });
 
+  /**
+   * Route to get a single recipe by ID
+   */
   router.get('/getQuestions/:id', (request, response, next) => {
     return getRecipeById(request)
       .then((question) => {
@@ -42,6 +48,9 @@ const recipeRouter = (app) => {
       });
   });
 
+  /**
+   * Route to create a recipe
+   */
   router.post('/createRecipe', (request, response, next) => {
     return (
       createRecipe(request)
@@ -58,6 +67,9 @@ const recipeRouter = (app) => {
     );
   });
 
+  /**
+   * Route to update a recipe from ID
+   */
   router.put('/updateRecipe/:id', (request, response, next) => {
     return (
       updateRecipe(request)
@@ -74,6 +86,9 @@ const recipeRouter = (app) => {
     );
   });
 
+  /**
+   * Route to delete a recipe
+   */
   router.delete('/deleteRecipe/:id', (request, response, next) => {
     return deleteRecipe(request)
       .then((question) => {

@@ -6,7 +6,11 @@ const mongoose = require('mongoose');
 // TODO: When DB is up uncomment this
 // const db = require('./config/keys').mongoURI;
 
+// Utils
 const initialiseServer = require('./utils/initialiseServer');
+
+// Consts
+const { PORT } = require('./consts/project');
 
 const app = express();
 const server = initialiseServer(app);
@@ -29,10 +33,9 @@ mongoose
   )
   .catch((error) => logger.error(error));
 
-const port = 4000;
 const credentials = {};
 
-module.exports = http.createServer(credentials, server).listen(port, () => {
-  logger.info('HTTP server start on port %d', port);
+module.exports = http.createServer(credentials, server).listen(PORT, () => {
+  logger.info('HTTP server start on port %d', PORT);
   logger.info('Press Ctrl + C to quit');
 });
