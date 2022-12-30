@@ -4,14 +4,15 @@ const http = require('http');
 const mongoose = require('mongoose');
 
 // TODO: When DB is up uncomment this
-// const db = require('./config/keys').mongoURI;
+const db = require('./config/keys').mongoURI;
+console.log(db);
 
 // Utils
 const initialiseServer = require('./utils/initialiseServer');
 
 // Consts
 const { PORT } = require('./consts/project');
-
+console.log(PORT);
 const app = express();
 const server = initialiseServer(app);
 

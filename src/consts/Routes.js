@@ -1,1 +1,3 @@
-export const RECIPES = '/recipes';
+const RECIPES = '/recipes';
+
+module.exports = { RECIPES };
