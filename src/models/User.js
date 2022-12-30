@@ -28,6 +28,7 @@ const UserSchema = new Schema({
       },
     },
   ],
+  roles: [String], // Roles such as Admin, Guest, User etc
 });
 
 module.exports = User = mongoose.model('users', UserSchema);

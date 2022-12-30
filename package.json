@@ -22,13 +22,18 @@
   },
   "homepage": "https://github.com/LukeCharles555/nutriapp-backend#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "http": "0.0.1-security",
+    "is-empty": "^1.2.0",
+    "jsonwebtoken": "^9.0.0",
+    "jwt-decode": "^3.1.2",
     "mongoose": "^6.7.2",
     "pino": "^6.11.3",
     "pino-pretty": "^4.7.1",
-    "http": "0.0.1-security"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.2",
