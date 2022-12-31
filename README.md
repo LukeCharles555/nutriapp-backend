@@ -39,3 +39,31 @@ npm start will start the API with node so it will just act as a static server, p
 There is only one bit of configuration you need to set up with this project, and that is to hook it up to a mongo database, I use Mongo DB Atlas.
 
 An example config file of how to set this up can be found [here](./src/config/keys.js.example)
+
+## Requests
+
+There are 2 endpoints in this project so far, users and recipes.
+
+Users is used for authentication, such as logging in and registering.
+
+Recipes is used for CRUD functionality on the recipes collection in MongoDB.
+
+Once you're all set up, the endpoints to send requests to can be found here:
+
+### Users
+
+| Endpoint                               |                                    Description                                     |                                                                                                    Request to send |
+| -------------------------------------- | :--------------------------------------------------------------------------------: | -----------------------------------------------------------------------------------------------------------------: |
+| http://localhost:4000/users/register   |       Sends a POST request to the user collection in mongo, with a new user        | POST with{ "name": "testName", "email": "test@test.com", "password": "testPassword", "password2": "testPassword" } |
+| http://localhost:4000/users/login      | Sends a POST request to the user collection in mongo, to check if that user exists |                                                 POST with { "email": "test@test.com", "password": "testPassword" } |
+| http://localhost:4000/users/userHealth |             Sends a GET request to check that the user endpoint is OK              |                                                                                                        GET Request |
+
+### Recipes
+
+| Endpoint                                       |                                                       Description                                                        |                                   Request to send |
+| ---------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------: | ------------------------------------------------: |
+| http://localhost:4000/recipes/recipeHealth     |                               Sends a GET request to check that the recipe endpoint is OK                                |                                       GET Request |
+| http://localhost:4000/recipes/createRecipe     |                     Sends a POST request to the recipe collection in mongo, to create a new question                     |        POST with [find-here](./data.json.example) |
+| http://localhost:4000/recipes/getRecipes       |                                  Sends a GET request to the recipes collection in mongo                                  |                                       GET Request |
+| http://localhost:4000/recipes/updateRecipe/:id |  Sends a PUT request to the recipe collection in mongo, with :id in the url replaced by what recipe you want to update   |         PUT with [find-here](./data.json.example) |
+| http://localhost:4000/recipes/deleteRecipe/:id | Sends a DELETE request to the recipe collection in mongo, with :id in the url replaced by what recipe you want to delete | DELETE with id of object replacing :id in the url |

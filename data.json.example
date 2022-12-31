@@ -1,0 +1,28 @@
+{
+  "title": "Boiled Egg"
+  "description": "An Egg boiled in water",
+  "ingredients": [
+    {
+      "ingredient": "Egg",
+      "quantity": 1
+    }
+  ],
+  "method": [
+    {
+        "step": 1,
+        "stepDescription": "Boil enough water in a pan so that when the egg is placed in the water, it will be completely submerged"
+    },
+    {
+        "step": 2,
+        "stepDescription": "Place the egg in the water and boil for 6-7 minutes for a hard boil, or around 5 minutes for a soft boil"
+    },
+    {
+        "step": 3,
+        "stepDescription": "Retrieve egg and peel the shell"
+    },
+    {
+        "step": 4,
+        "stepDescription": "Serve"
+    }
+  ]
+}

@@ -19,7 +19,7 @@ const recipeRouter = (app) => {
   /**
    * Route to get all recipes
    */
-  router.get('/getRecipes', (request, response, next) => {
+  router.get('/getRecipes', async (request, response, next) => {
     return getRecipes()
       .then((recipes) => {
         app.logger.info('Recipes retrieved');
@@ -35,7 +35,7 @@ const recipeRouter = (app) => {
   /**
    * Route to get a single recipe by ID
    */
-  router.get('/getQuestions/:id', (request, response, next) => {
+  router.get('/getQuestions/:id', async (request, response, next) => {
     return getRecipeById(request)
       .then((question) => {
         app.logger.info('Recipe retrieved');
@@ -51,7 +51,7 @@ const recipeRouter = (app) => {
   /**
    * Route to create a recipe
    */
-  router.post('/createRecipe', (request, response, next) => {
+  router.post('/createRecipe', async (request, response, next) => {
     return (
       createRecipe(request)
         // @ts-ignore
@@ -70,7 +70,7 @@ const recipeRouter = (app) => {
   /**
    * Route to update a recipe from ID
    */
-  router.put('/updateRecipe/:id', (request, response, next) => {
+  router.put('/updateRecipe/:id', async (request, response, next) => {
     return (
       updateRecipe(request)
         // @ts-ignore
@@ -89,7 +89,7 @@ const recipeRouter = (app) => {
   /**
    * Route to delete a recipe
    */
-  router.delete('/deleteRecipe/:id', (request, response, next) => {
+  router.delete('/deleteRecipe/:id', async (request, response, next) => {
     return deleteRecipe(request)
       .then((question) => {
         app.logger.info('Recipe deleted successfully');
